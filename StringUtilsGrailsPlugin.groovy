@@ -3,15 +3,21 @@ class StringUtilsGrailsPlugin {
     def dependsOn = [:]
 
     // TODO Fill in these fields
-    def author = "Your name"
-    def authorEmail = ""
-    def title = "Plugin summary/headline"
+    def author = "John Allison"
+    def authorEmail = "jja@ucar.edu"
+    def title = "Additional utility methods for java.lang.String"
     def description = '''\
-Brief description of the plugin.
+Adds some utility methods for java.lang.String
+
+excerpt(length)
+ Returns a string no longer than length, with ... appended if the original string was longer.
+
+excerpt() calls excerpt(255)
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/StringUtils+Plugin"
+    //def documentation = "http://grails.org/StringUtils+Plugin"
+    def documentation = ""
 
     def doWithSpring = {
         // TODO Implement runtime spring config (optional)
