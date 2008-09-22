@@ -32,13 +32,16 @@ excerpt() calls excerpt(255)
     }
 	                                      
     def doWithDynamicMethods = { ctx ->
-        // TODO Implement registering dynamic methods to classes (optional)
-    }
-	
-    def onChange = { event ->
-        // TODO Implement code that is executed when any artefact that this plugin is
-        // watching is modified and reloaded. The event contains: event.source,
-        // event.application, event.manager, event.ctx, and event.plugin.
+        String.metaClass.excerpt << { Integer length ->
+            if (null == length) length=255
+            if (length < 0) return null
+            if (delegate.length() <= length) return delegate
+            if (length < 3) return delegate.substring(0,length)
+            def i
+            for (i=length-3; i>0 && Character.isLetter(delegate.codePointAt(i)); i--) ;
+            if (i==0) i=length-3;
+            return delegate.substring(0,i) + '...'
+        } << {-> delegate.excerpt(255)} // not really needed with length null check (?)
     }
 
     def onConfigChange = { event ->
