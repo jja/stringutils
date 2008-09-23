@@ -18,3 +18,4 @@ stacktrace.log
 
 # project release file
 *.war
+*.zip
