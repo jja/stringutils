@@ -1,29 +1,29 @@
 class StringTests extends GroovyTestCase {
 
     void testExcerptEmpty() {
-        String s = ""
-        assertEquals s, s.excerpt()
-        assertEquals s, s.excerpt(2)
-        assertEquals s, s.excerpt(22)
-        assertEquals s, s.excerpt(0)
-        s = "foo bar"
-        assertEquals s, s.excerpt(0)
+        String empty = ""
+        assertEquals empty, empty.excerpt()
+        assertEquals empty, empty.excerpt(2)
+        assertEquals empty, empty.excerpt(22)
+        assertEquals empty, empty.excerpt(0)
+        String foobar = "foo bar"
+        assertEquals empty, foobar.excerpt(0)
     }
 
     void testExcerptLengthBoundary() {
-        String s = ""
-        assertNull s.excerpt(-1)
+        String empty = ""
+        assertNull empty.excerpt(-1)
 
-        s = "foo bar"
-        assertEquals s, s.excerpt()
-        assertEquals s, s.excerpt(42)
+        String foobar = "foo bar"
+        assertEquals foobar, foobar.excerpt()
+        assertEquals foobar, foobar.excerpt(42)
     }
 
     void testExcerpt() {
-        String s = "foo bar bahz qux quxxle"
-        assertEquals "foo bar...",s.excerpt(10)
-        assertEquals "foo bar...",s.excerpt(12)
-        assertEquals "fo...",s.excerpt(5)
+        String foobaretc = "foo bar bahz qux quxxle"
+        assertEquals "foo bar...",foobaretc.excerpt(10)
+        assertEquals "foo bar...",foobaretc.excerpt(12)
+        assertEquals "fo...",foobaretc.excerpt(5)
     }
 
 }
