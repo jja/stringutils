@@ -1,8 +1,8 @@
 <plugin name='string-utils' version='0.1'>
   <author>John Allison</author>
   <authorEmail>jja@sinequanon.net</authorEmail>
-  <title>Additional utility methods for java.lang.String</title>
-  <description>Adds some utility methods for java.lang.String
+  <title>Additional utility methods for String</title>
+  <description>Adds some utility methods for String
 
 excerpt(length)
  Returns a string no longer than length, with "..." appended if the original string was longer.
