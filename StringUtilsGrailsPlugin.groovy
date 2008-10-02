@@ -10,7 +10,9 @@ class StringUtilsGrailsPlugin {
 Adds some utility methods for java.lang.String
 
 excerpt(length)
- Returns a string no longer than length, with ... appended if the original string was longer.
+ Returns a string no longer than length, with "..." appended if the original string was longer.
+ Breaks the string at the last non-letter so the excerpt is readable.
+ If length < 3 then "..." is not appended.
 
 excerpt() calls excerpt(255)
 '''
@@ -36,7 +38,7 @@ excerpt() calls excerpt(255)
             if (null == length) length=255
             if (length < 0) return null
             if (delegate.length() <= length) return delegate
-            if (length < 3) return delegate.substring(0,length)
+            if (length <= 3) return delegate.substring(0,length)
             def i
             for (i=length-3; i>0 && Character.isLetter(delegate.codePointAt(i)); i--) ;
             if (i==0) i=length-3;
