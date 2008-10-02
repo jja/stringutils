@@ -1,0 +1,8 @@
+stringutils : StringUtilsGrailsPlugin
+
+Grails plugin with utility methods for java.lang.String
+
+excerpt(length)
+ Returns a string no longer than length, with "..." appended if the original string was longer.
+ Breaks the string at the last non-letter so the excerpt is readable.
+ If length < 3 then "..." is not appended.
