@@ -5,9 +5,9 @@ class StringUtilsGrailsPlugin {
     // TODO Fill in these fields
     def author = "John Allison"
     def authorEmail = "jja@sinequanon.net"
-    def title = "Additional utility methods for java.lang.String"
+    def title = "Additional utility methods for String"
     def description = '''\
-Adds some utility methods for java.lang.String
+Adds some utility methods for String
 
 excerpt(length)
  Returns a string no longer than length, with "..." appended if the original string was longer.
