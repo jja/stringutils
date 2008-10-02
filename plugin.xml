@@ -1,6 +1,6 @@
 <plugin name='string-utils' version='0.1'>
   <author>John Allison</author>
-  <authorEmail>jja@ucar.edu</authorEmail>
+  <authorEmail>jja@sinequanon.net</authorEmail>
   <title>Additional utility methods for java.lang.String</title>
   <description>Adds some utility methods for java.lang.String
 
