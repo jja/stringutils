@@ -4,7 +4,7 @@ class StringUtilsGrailsPlugin {
 
     // TODO Fill in these fields
     def author = "John Allison"
-    def authorEmail = "jja@ucar.edu"
+    def authorEmail = "jja@sinequanon.net"
     def title = "Additional utility methods for java.lang.String"
     def description = '''\
 Adds some utility methods for java.lang.String

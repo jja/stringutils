@@ -5,7 +5,9 @@
   <description>Adds some utility methods for java.lang.String
 
 excerpt(length)
- Returns a string no longer than length, with ... appended if the original string was longer.
+ Returns a string no longer than length, with "..." appended if the original string was longer.
+ Breaks the string at the last non-letter so the excerpt is readable.
+ If length &lt; 3 then "..." is not appended.
 
 excerpt() calls excerpt(255)
 </description>
