@@ -1,0 +1,16 @@
+<plugin name='string-utils' version='0.1'>
+  <author>John Allison</author>
+  <authorEmail>jja@ucar.edu</authorEmail>
+  <title>Additional utility methods for java.lang.String</title>
+  <description>Adds some utility methods for java.lang.String
+
+excerpt(length)
+ Returns a string no longer than length, with ... appended if the original string was longer.
+
+excerpt() calls excerpt(255)
+</description>
+  <resources>
+    <resource>UrlMappings</resource>
+    <resource>DataSource</resource>
+  </resources>
+</plugin>
