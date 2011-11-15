@@ -1,4 +1,4 @@
-<plugin name='string-utils' version='0.1'>
+<plugin name='string-utils' version='0.2' grailsVersion='1.3.7 &gt; *'>
   <author>John Allison</author>
   <authorEmail>jja@sinequanon.net</authorEmail>
   <title>Additional utility methods for String</title>
@@ -10,9 +10,29 @@ excerpt(length)
  If length &lt; 3 then "..." is not appended.
 
 excerpt() calls excerpt(255)
+
+chop()
+ Returns a new string that has had the last character removed from the given string.
+ Like perl's chop()
+
+append(string,times)
+ Returns a string consisting of the original string, appended by a new string the specified number of times.
+ e.g. "foo".append("bar",2) == "foobarbar"
+
+append(string)
+ calls append(string,1) and is like StringBuilder.append()
+
+isBlank()
+ Returns a boolean indicating whether the trimmed version of the original string has 0 length
+
+isNotBlank()
+ Returns a boolean indicating whether the trimmed version of the original string has length &gt; 0
+
 </description>
   <resources>
-    <resource>UrlMappings</resource>
     <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
   </resources>
+  <dependencies />
+  <behavior />
 </plugin>
