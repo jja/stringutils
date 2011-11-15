@@ -15,6 +15,24 @@ excerpt(length)
  If length < 3 then "..." is not appended.
 
 excerpt() calls excerpt(255)
+
+chop()
+ Returns a new string that has had the last character removed from the given string.
+ Like perl's chop()
+
+append(string,times)
+ Returns a string consisting of the original string, appended by a new string the specified number of times.
+ e.g. "foo".append("bar",2) == "foobarbar"
+
+append(string)
+ calls append(string,1) and is like StringBuilder.append()
+
+isBlank()
+ Returns a boolean indicating whether the trimmed version of the original string has 0 length
+
+isNotBlank()
+ Returns a boolean indicating whether the trimmed version of the original string has length > 0
+
 '''
 
     // URL to the plugin's documentation
@@ -46,12 +64,16 @@ excerpt() calls excerpt(255)
         } << {-> delegate.excerpt(255)} // not really needed with length null check (?)
 
         String.metaClass.chop << {
-            return delegate.substring(0,delegate.length()-1)
+            try { return delegate.substring(0,delegate.length()-1) }
+            catch (IndexOutOfBoundsException) { return '' }
         }
 
-        String.metaClass.append << { String s, Integer l ->
-            StringBuilder sb = new StringBuilder(l * s.length())
-            l.times { sb.append(s) }
+        String.metaClass.append << { String s, Integer n ->
+            if (n<=0) return delegate
+            if (!s?.length()) return delegate
+
+            StringBuilder sb = new StringBuilder(n * s.length())
+            n.times { sb.append(s) }
             return delegate + new String(sb)
         } << { String s -> delegate.append(s,1) }
 
