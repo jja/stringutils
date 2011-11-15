@@ -1,21 +1,30 @@
-# .gitignore for Grails 1.0.3
+# .gitignore for Grails 1.2
 
-# web application files that are replaced by "grails upgrade"
-#  cf. GRAILS_HOME/scripts/Upgrade.groovy, target( upgrade )
+# web application files
 /web-app/WEB-INF
 
-# IDE support files that are overwritten by "grails upgrade"
-#  cf. GRAILS_HOME/scripts/CreateApp.groovy, target( createIDESupportFiles )
-.classpath
-.project
-.settings
-gedi8.launch
-gedi8.tmproj
+# IDE support files
+/.classpath
+/.launch
+/.project
+/.settings
+/*.launch
+/*.tmproj
+/ivy*
+
+# default HSQL database files for production mode
+/prodDb.*
 
 # logs
-stacktrace.log
+/stacktrace.log
 /test/reports
+/logs
 
 # project release file
-*.war
-*.zip
+/*.war
+
+# plugin release file
+/*.zip
+
+# temporary? build files
+/target
