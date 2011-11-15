@@ -1,5 +1,5 @@
 class StringUtilsGrailsPlugin {
-    def version = 0.1
+    def version = 0.2
     def dependsOn = [:]
 
     // TODO Fill in these fields
@@ -44,6 +44,25 @@ excerpt() calls excerpt(255)
             if (i==0) i=length-3;
             return delegate.substring(0,i) + '...'
         } << {-> delegate.excerpt(255)} // not really needed with length null check (?)
+
+        String.metaClass.chop << {
+            return delegate.substring(0,delegate.length()-1)
+        }
+
+        String.metaClass.append << { String s, Integer l ->
+            StringBuilder sb = new StringBuilder(l * s.length())
+            l.times { sb.append(s) }
+            return delegate + new String(sb)
+        } << { String s -> delegate.append(s,1) }
+
+        String.metaClass.isBlank << {
+            return delegate.trim().length() == 0
+        }
+
+        String.metaClass.isNotBlank << {
+            return delegate.trim().length() > 0
+        }
+
     }
 
     def onConfigChange = { event ->
