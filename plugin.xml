@@ -1,4 +1,4 @@
-<plugin name='string-utils' version='0.2' grailsVersion='1.3.7 &gt; *'>
+<plugin name='string-utils' version='0.2' grailsVersion='1.0.3 &gt; *'>
   <author>John Allison</author>
   <authorEmail>jja@sinequanon.net</authorEmail>
   <title>Additional utility methods for String</title>
@@ -29,6 +29,7 @@ isNotBlank()
  Returns a boolean indicating whether the trimmed version of the original string has length &gt; 0
 
 </description>
+  <documentation>https://github.com/jja/stringutils/blob/master/README</documentation>
   <resources>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>

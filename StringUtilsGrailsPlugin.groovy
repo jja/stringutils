@@ -1,6 +1,7 @@
 class StringUtilsGrailsPlugin {
     def version = 0.2
     def dependsOn = [:]
+    def grailsVersion = "1.0.3 > *"
 
     // TODO Fill in these fields
     def author = "John Allison"
@@ -37,20 +38,8 @@ isNotBlank()
 
     // URL to the plugin's documentation
     //def documentation = "http://grails.org/StringUtils+Plugin"
-    def documentation = ""
+    def documentation = "https://github.com/jja/stringutils/blob/master/README"
 
-    def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
-    }
-   
-    def doWithApplicationContext = { applicationContext ->
-        // TODO Implement post initialization spring config (optional)		
-    }
-
-    def doWithWebDescriptor = { xml ->
-        // TODO Implement additions to web.xml (optional)
-    }
-	                                      
     def doWithDynamicMethods = { ctx ->
         String.metaClass.excerpt << { Integer length ->
             if (null == length) length=255
@@ -87,8 +76,8 @@ isNotBlank()
 
     }
 
-    def onConfigChange = { event ->
-        // TODO Implement code that is executed when the project configuration changes.
-        // The event is the same as for 'onChange'.
-    }
+    def doWithSpring = { }
+    def doWithApplicationContext = { applicationContext -> }
+    def doWithWebDescriptor = { xml -> }
+    def onConfigChange = { event -> }
 }
