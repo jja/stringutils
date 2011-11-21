@@ -24,7 +24,8 @@
 /*.war
 
 # plugin release file
-/*.zip
+# - leave it in repo for users to d/l
+#/*.zip
 
 # temporary? build files
 /target

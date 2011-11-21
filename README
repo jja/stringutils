@@ -26,3 +26,12 @@ isBlank()
 isNotBlank()
  Returns a boolean indicating whether the trimmed version of the original string has length > 0
 
+
+INSTALL
+
+download the latest grails-string-utils-VERSION.zip from this repo
+
+in your app, run
+
+    grails install-plugin grails-string-utils-VERSION.zip
+
