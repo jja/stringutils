@@ -1,5 +1,5 @@
 class StringUtilsGrailsPlugin {
-    def version = 0.2
+    def version = 0.3
     def dependsOn = [:]
     def grailsVersion = "1.0.3 > *"
 
@@ -60,10 +60,7 @@ isNotBlank()
         String.metaClass.append << { String s, Integer n ->
             if (n<=0) return delegate
             if (!s?.length()) return delegate
-
-            StringBuilder sb = new StringBuilder(n * s.length())
-            n.times { sb.append(s) }
-            return delegate + new String(sb)
+            return delegate + s * n
         } << { String s -> delegate.append(s,1) }
 
         String.metaClass.isBlank << {

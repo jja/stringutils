@@ -75,6 +75,26 @@ class AppendTests extends GroovyTestCase {
         assertEquals empty, empty.append(empty,999)
     }
 
+    void testAppendNullToEmpty() {
+        String empty = ""
+
+        assertEquals empty, empty.append(null)
+        assertEquals empty, empty.append(null,0)
+        assertEquals empty, empty.append(null,1)
+        assertEquals empty, empty.append(null,2)
+        assertEquals empty, empty.append(null,999)
+    }
+
+    void testAppendNullToShort() {
+        String given = "abc"
+
+        assertEquals given, given.append(null)
+        assertEquals given, given.append(null,0)
+        assertEquals given, given.append(null,1)
+        assertEquals given, given.append(null,2)
+        assertEquals given, given.append(null,999)
+    }
+
     void testAppendNines() {
         String given = "a"
         String addtl = "9"
