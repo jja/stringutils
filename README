@@ -1,6 +1,17 @@
 stringutils : StringUtilsGrailsPlugin
 
-Grails plugin with utility methods for String
+Grails 1.3.x plugin with utility methods for String
+
+v1.0.0 and v0.3 are the same codebase.
+
+The code has been converted to a Groovy 2.x extension module:
+  https://github.com/jja/groovy-jja-extensions
+
+with a corresponding Grails 2.x plugin:
+  https://github.com/jja/grails-jja-extensions-plugin
+
+
+String methods:
 
 excerpt(length)
  Returns a string no longer than length, with "..." appended if the original string was longer.

@@ -1,7 +1,12 @@
 class StringUtilsGrailsPlugin {
-    def version = 0.3
+    def version = '1.0.0'
     def dependsOn = [:]
     def grailsVersion = "1.0.3 > *"
+    def pluginExcludes = [
+            "grails-app/views/**",
+            "lib/",
+            "web-app/",
+        ]
 
     // TODO Fill in these fields
     def author = "John Allison"

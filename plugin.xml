@@ -1,4 +1,4 @@
-<plugin name='string-utils' version='0.3' grailsVersion='1.0.3 &gt; *'>
+<plugin name='string-utils' version='1.0.0' grailsVersion='1.0.3 &gt; *'>
   <author>John Allison</author>
   <authorEmail>jja@sinequanon.net</authorEmail>
   <title>Additional utility methods for String</title>

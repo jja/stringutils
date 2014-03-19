@@ -1,7 +1,8 @@
 # .gitignore for Grails 1.2
 
 # web application files
-/web-app/WEB-INF
+#/web-app/WEB-INF
+/web-app/
 
 # IDE support files
 /.classpath
